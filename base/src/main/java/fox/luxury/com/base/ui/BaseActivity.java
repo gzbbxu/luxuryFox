@@ -2,16 +2,7 @@ package fox.luxury.com.base.ui;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewStub;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import fox.luxury.com.base.R;
 import fox.luxury.com.base.util.TUtil;
 
 public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends AppCompatActivity {
