@@ -14,7 +14,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter,LoginModel> imple
     private Button btn_login;
     @Override
     public int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_login;
     }
 
     @Override
