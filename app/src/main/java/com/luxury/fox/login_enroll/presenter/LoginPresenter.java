@@ -12,6 +12,7 @@ import org.reactivestreams.Subscription;
 import java.util.List;
 
 import fox.luxury.com.base.bean.BaseRespose;
+import fox.luxury.com.base.rx.BaseObserver;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -66,6 +67,23 @@ public class LoginPresenter extends LoginContract.Presenter{
             @Override
             public void onComplete() {
                 Log.d("zhouke","onComplete..");
+            }
+        });
+
+        mModel.login(userNmae,pwd).subscribe(new BaseObserver<List<TestBook>>(mContext) {
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+
+            @Override
+            protected void onHandleSuccess(List<TestBook> testBooks) {
+
             }
         });
 //        mRxManager.add(mModel.login(userNmae,pwd).subscribe());
