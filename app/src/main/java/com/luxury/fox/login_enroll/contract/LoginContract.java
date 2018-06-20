@@ -1,6 +1,9 @@
 package com.luxury.fox.login_enroll.contract;
 
+import com.luxury.fox.bean.TestBook;
 import com.luxury.fox.bean.UserBeanResponse;
+
+import java.util.List;
 
 import fox.luxury.com.base.bean.BaseRespose;
 import fox.luxury.com.base.ui.BaseModel;
@@ -10,7 +13,7 @@ import io.reactivex.Observable;
 
 public interface LoginContract {
     interface Model extends BaseModel {
-        Observable<BaseRespose<UserBeanResponse>> login(String userName, String pwd);
+        Observable<BaseRespose<List<TestBook>>> login(String userName, String pwd);
     }
 
     interface View extends BaseView {

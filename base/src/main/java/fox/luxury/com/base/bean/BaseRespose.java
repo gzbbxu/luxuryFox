@@ -3,21 +3,13 @@ package fox.luxury.com.base.bean;
 import java.io.Serializable;
 
 public class BaseRespose<T> implements Serializable {
-    public String code;
-    public String msg;
+    public String Code;
+    public String Msg;
 
-    public T data;
+    public T Data;
 
     public boolean success() {
-        return "1".equals(code);
+        return "1".equals(Code);
     }
 
-    @Override
-    public String toString() {
-        return "BaseRespose{" +
-                "code='" + code + '\'' +
-                ", msg='" + msg + '\'' +
-                ", data=" + data +
-                '}';
-    }
 }

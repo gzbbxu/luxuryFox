@@ -14,4 +14,7 @@ public abstract class BasePresenter<M, V> {
         this.mModel = m;
         this.mView = v;
     }
+    public void onDestroy() {
+        mRxManager.clear();
+    }
 }

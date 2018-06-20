@@ -1,26 +1,26 @@
 package fox.luxury.com.base.rx;
 
-import rx.Subscription;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 public class RxManager {
     /*管理Observables 和 Subscribers订阅*/
-    private CompositeSubscription mCompositeSubscription = new CompositeSubscription();
-
+    CompositeDisposable composite = new CompositeDisposable();
     /**
      * 单纯的Observables 和 Subscribers管理
      *
-     * @param m
+     * @param
      */
-    public void add(Subscription m) {
+    public void add(Disposable disposable) {
         /*订阅管理*/
-        mCompositeSubscription.add(m);
+        composite.add(disposable);
+
     }
 
     /**
      * 单个presenter生命周期结束，取消订阅和所有rxbus观察
      */
     public void clear() {
-        mCompositeSubscription.unsubscribe();// 取消所有订阅
+        composite.dispose();
     }
 }
